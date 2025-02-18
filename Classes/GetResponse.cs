@@ -6,10 +6,19 @@ namespace _17._02.Classes;
 // This step is necessary to define the structure of the data we will receive from the API.
 public class GetResponse
 {
-    public int UserID { get; set; }
-    public int Id { get; set; }
-    public string? Title { get; set; }
+    public int id { get; set; }
+    public string? name { get; set; }
+    public string? username { get; set; }
+    public string? email { get; set; }
 } 
+            /*   "id": 1,
+
+    "name": "Leanne Graham",
+    "username": "Bret",
+    "email": "Sincere@april.biz", */
+
+
+
 
 /* class PostData
 {

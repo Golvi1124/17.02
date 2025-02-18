@@ -3,11 +3,12 @@
 using System.Text;
 using System.Text.Json;
 using _17._02.Classes;
+using System.Threading.Tasks;
 namespace _17._02;
 
 class Program
 {
-    static void Main(string[] args)
+    static async Task Main(string[] args)
     {
         var client = new HttpClient();
         client.BaseAddress = new Uri("https://jsonplaceholder.typicode.com/");
@@ -17,23 +18,25 @@ class Program
         This method takes in the endpoint of the API as its parameter. 
         This step is necessary to send the request to the API and retrieve the data we want.*/
 
-        var response = client.GetAsync("todos/1").Result;
+        var response = await client.GetAsync("users");
 
         if (response.IsSuccessStatusCode)
         {
             var responseContent = response.Content.ReadAsStringAsync().Result;
-            var getResponse = System.Text.Json.JsonSerializer.Deserialize<GetResponse>(responseContent);
+            var getResponse = JsonSerializer.Deserialize<List<GetResponse>>(responseContent);
             Console.WriteLine("Get successful!");
-            if (getResponse != null)
-            {
-                Console.WriteLine("UserId: " + getResponse.UserID);
-                Console.WriteLine("Id: " + getResponse.Id);
-                Console.WriteLine("Title: " + getResponse.Title);
-            }
-            /*   "id": 1,
-    "name": "Leanne Graham",
-    "username": "Bret",
-    "email": "Sincere@april.biz", */
+           
+if (getResponse != null)
+{
+    foreach (var user in getResponse)
+    {
+        Console.WriteLine($"Id: {user.id}");
+        Console.WriteLine($"Name: {user.name}");
+        Console.WriteLine($"Username: {user.username}");
+        Console.WriteLine($"Email: {user.email}");
+    }
+}
+
             else
             {
                 Console.WriteLine("Error: Unable to deserialize the response.");
