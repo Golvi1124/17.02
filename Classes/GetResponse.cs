@@ -1,4 +1,4 @@
-using System;
+// Wanted to Get out specific fields
 
 namespace _17._02.Classes;
 
@@ -10,48 +10,4 @@ public class GetResponse
     public string? name { get; set; }
     public string? username { get; set; }
     public string? email { get; set; }
-} 
-            /*   "id": 1,
-
-    "name": "Leanne Graham",
-    "username": "Bret",
-    "email": "Sincere@april.biz", */
-
-
-
-
-/* class PostData
-{
-    public string? Name { get; set; }
-    public int Age { get; set; }
-    public string? Address { get; set; }
 }
-
-class PostResponse
-{
-    public int Id { get; set; }
-} */
-
-
-/*  "id": 1,
-    "name": "Leanne Graham",
-    "username": "Bret",
-    "email": "Sincere@april.biz",
-    "address": {
-      "street": "Kulas Light",
-      "suite": "Apt. 556",
-      "city": "Gwenborough",
-      "zipcode": "92998-3874",
-      "geo": {
-        "lat": "-37.3159",
-        "lng": "81.1496" 
-        
-        
-        
-        userId": 1,
-    "id": 1,
-    "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
-    "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
-  },*/
-
-        
